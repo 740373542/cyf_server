@@ -1,3 +1,0 @@
-the hello world is a time honored in computer programming;
-it is a simple exercise that gets started learning something;
-let's get started with github;
