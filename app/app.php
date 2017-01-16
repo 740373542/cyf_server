@@ -3,7 +3,7 @@ namespace app;
 
 require APP_PATH . '/methods.php';
 
-require \view('test');
+// require \view('test');
 
 // $arr = [
 // 	0 => array('id'=>1,'name'=>'ls'),
@@ -14,3 +14,9 @@ require \view('test');
 // $ls = \indexBy($arr,'id');
 
 // print_r($ls);
+
+class controller 
+{
+	
+}
+

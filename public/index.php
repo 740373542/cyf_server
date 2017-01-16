@@ -8,9 +8,72 @@ define('CONFIG_PATH',BASE_PATH . '/config');
 
 define('VIEW_PATH',APP_PATH . '/view/');
 
+define('CONTROLLER_PATH',APP_PATH . '/controller/');
+
 $app = APP_PATH . '/app.php';
 
 require_once APP_PATH . '/app.php';
+
+$urlPath = $_SERVER['REQUEST_URI'];
+
+if( !empty($urlPath) ){
+	$controller = ltrim(substr($urlPath,0,strripos($urlPath,'/')),'/');
+
+	$method = ltrim(substr($urlPath,strripos($urlPath,'/')),'/');
+
+	if(empty($method)) $method = 'index';
+
+	require CONTROLLER_PATH.$controller.'.php';
+
+	$class = new $controller;
+
+	$class->$method();
+	
+}else{
+	// exit('没有找到URL');
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // echo APP_PATH.'</br>';
 // echo CONFIG_PATH.'</br>';
