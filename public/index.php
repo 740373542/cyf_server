@@ -12,8 +12,6 @@ define('VIEW_PATH',APP_PATH . '/view/');
 
 define('CONTROLLER_PATH',APP_PATH . '/controller/');
 
-$app = APP_PATH . '/app.php';
-
 require_once APP_PATH . '/app.php';
 
 $urlPath = $_SERVER['REQUEST_URI'];
@@ -24,17 +22,30 @@ if( $urlPath == '/'){
 
 }else{
 
-	$controller = ltrim(substr($urlPath,0,strripos($urlPath,'/')),'/');
+		if(strripos($urlPath,'?') > 0 || strripos($urlPath,'?') !== false){
 
-	$method = ltrim(substr($urlPath,strripos($urlPath,'/')),'/');
+			$urlPath = substr($urlPath,0,strripos($urlPath,'?'));
 
-	if( $urlPath == '/'.$controller.'/') $method = 'index';
+		}	
 
-	require CONTROLLER_PATH.$controller.'.php';
+		if(strripos($urlPath,'/') == 0){
 
-	$class = new $controller;
+			$controller = ltrim(substr($urlPath,strripos($urlPath,'/')),'/');
 
-	$class->$method();
+			$method = 'index';
+
+		}else{
+
+			$controller = ltrim(substr($urlPath,0,strripos($urlPath,'/')),'/');
+
+			$method = ltrim(substr($urlPath,strripos($urlPath,'/')),'/');
+		}
+
+		require CONTROLLER_PATH.$controller.'.php';
+
+		$class = new $controller;
+
+		$class->$method();
 
 }
 
