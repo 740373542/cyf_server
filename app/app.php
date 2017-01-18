@@ -9,7 +9,7 @@ class engine
 
 	public static function route()
 	{
-			$url = $_SERVER['REQUEST_URI'];
+			$url = $_SERVER['REQUEST_URI'];//接到当前url
 			if($url == '/'){
 				$url = 'NOT_URL';
 				return $url;
@@ -49,7 +49,7 @@ class engine
 		$php = $route[0].'.php';
 		require CONTROLLER_PATH.$php;
 		$class = new $controller();
-		$class->$method(); 
+		$class->$method();
 	}
 
 
