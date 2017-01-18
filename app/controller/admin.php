@@ -1,8 +1,14 @@
 <?php
+namespace controller;
+use \app\controller;
 
-class admin 
+
+class admin extends controller
 {
+	
 	function index (){
 		require \view('test');
 	}
+
+
 }

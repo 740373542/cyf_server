@@ -7,23 +7,7 @@
 <div class="box_row" style="margin-top:10px;height:88%">
 	<div class="item" style="flex-grow:0;">MENU</div>
 	<div class="item" style="flex-grow:1;margin-left:50px">CONTENT</div>
-	<div class="item" style="flex-grow:1;margin-left:50px">CONTENT</div>
-	<div class="item" style="flex-grow:1;margin-left:50px">CONTENT</div>
-	<div class="item" style="flex-grow:1;margin-left:50px">CONTENT</div>
-	<div class="item" style="flex-grow:1;margin-left:50px">CONTENT</div>
-	<div class="item" style="flex-grow:1;margin-left:50px">CONTENT</div>
-	<div class="item" style="flex-grow:1;margin-left:50px">CONTENT</div>
-	<div class="item" style="flex-grow:1;margin-left:50px">CONTENT</div>
-	<div class="item" style="flex-grow:1;margin-left:50px">CONTENT</div>
-	<div class="item" style="flex-grow:1;margin-left:50px">CONTENT</div>
-	<div class="item" style="flex-grow:1;margin-left:50px">CONTENT</div>
-	<div class="item" style="flex-grow:1;margin-left:50px">CONTENT</div>
 </div>
-
-
-
-
-
 
 
 
