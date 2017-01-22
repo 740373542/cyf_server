@@ -1,5 +1,9 @@
 <?php
 
+
+//自创的controller路由
+
+
 $urlPath = $_SERVER['REQUEST_URI'];
 
 if( $urlPath == '/'){
