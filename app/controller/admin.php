@@ -10,5 +10,5 @@ class admin extends controller
 		require \view('test');
 	}
 
-
+	
 }
