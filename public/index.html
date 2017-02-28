@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="/react_build/react.js"></script>
+    <script src="/react_build/react-dom.js"></script>
+    <script src="/react_build/browser.min.js"></script>
+    <script type="text/babel" src="react_function.js"></script>
+  </head>
+  <body>
+    <div id="example">123456</div>
+    <script type="text/babel">
+
+   
+
+    var Test = React.createClass({
+      render:function(){
+        return <b>hello,word</b>
+      }
+    })
+
+    var fontColor = 'red'
+
+     var htmls = [
+        <h1>course manage</h1>,
+        <Test></Test>,
+        <p style={{color:fontColor}}>end</p>,
+      ];
+
+
+
+    ReactDOM.render(
+      <div>{htmls}</div>,
+      document.getElementById('example')
+    )
+
+    </script> 
+
+  </body>
+</html>

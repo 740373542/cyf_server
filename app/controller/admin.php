@@ -1,14 +1,17 @@
 <?php
 namespace controller;
-use \app\controller;
+// use \app\controller;
 
 
-class admin extends controller
+class admin extends \app\controller
 {
 	
 	function index (){
-		require \view('test');
+		$count = 0;
+		$ls = \model\member::finds("where id > 0",'*',$count,[
+				'page'=>3,
+				'length'=>1,
+			]);
+		\vd($ls,'123456789');
 	}
-
-	
 }
