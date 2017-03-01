@@ -8,7 +8,7 @@ class dbconfig
     'database_name' => 'web_base',
     'server' => '127.0.0.1',
     'username' => 'root',
-    'password' => '',
+    'password' => '123456',
     'charset' => 'utf8',
     // 可选参数
     'port' => 3306,

@@ -60,10 +60,83 @@ class engine
 
 }
 
+//单立模式server实例化
+class di implements \arrayaccess
+{
+	private $name = '';
+	private static $insance = null;
+	private $container = [];
+
+	private function __construct(){
+
+	}
+
+	public static function load(){
+		if(null == self::$insance){
+			self::$insance = new self();
+			return self::$insance;
+		}
+		return self::$insance;
+	}
+
+	public function offsetSet($offset,$value = null){
+
+		$this->container[$offset] = $value;
+
+	}
+
+	public function offsetGet($offset){
+		if( isset($this->container[$offset]) ){
+		}else{
+			$serviceName = $offset;
+			$serviceClass = '\\service\\'.$serviceName;
+			return $this->container[$offset] = new $serviceClass();
+		}
+	}
+
+	public function offsetExists($offset){
+
+    return isset($this->container[$offset]);
+
+  }  
+  
+  public function offsetUnset($offset){  
+
+    unset($this->container[$offset]);
+
+  } 
+
+}
+
+
+
 
 class controller 
 {
-	 
+	 public $di = null;
+
+	 public $code = 0;
+	 public $msg = '';
+	 // public $data = [];
+	 public $content = null;
+
+
+	 public function __construct(){
+			$this->di = di::load();
+	 }
+
+	 public function echoJson(){
+	 		$this->content['code'] = $this->code;
+	 		if($this->msg){
+	 			$this->content['msg'] = $this->msg;
+	 		}
+	 		echo json_encode($this->content, JSON_UNESCAPED_UNICODE);
+	 }
+
+	 public function ajaxReturn($data){
+	 		$this->content['data'] = $data;
+	 		$this->echoJson();
+	 }
 }
 
 
@@ -72,9 +145,11 @@ class model
 	public $id = null;
 	public $column = '';
 	public $data = [];
+	public $di = null;
 
 	function __construct(){
 		// $this->connect();
+		$this->di = di::load();
 	}
 
 	public static function connect(){

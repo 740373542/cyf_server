@@ -12,18 +12,17 @@ define('VIEW_PATH',APP_PATH . '/view/');
 
 define('CONTROLLER_PATH',APP_PATH . '/controller/');
 
+define('SERVICE_PATH',APP_PATH . '/service/');
+
 require_once APP_PATH . '/app.php';
 
-// require_once APP_PATH . '/urlconfig.php';
 
+try{
+  \app\engine::run();
+}catch(\Exception $e){
+  echo '{"code":'.$e->getCode().',"msg":"'.$e->getMessage().'"}';
 
-\app\engine::run();
-
-
-
-
-
-
+}
 
 
 
