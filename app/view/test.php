@@ -1,41 +1,50 @@
-<div class="box_row" style="width:100%;height:10%">
-	<div class="item" style="flex-grow:2;">LOGO</div>
-	<div class="item" style="flex-grow:10;">TITLE</div>
-	<div class="item" style="flex-grow:1;">OPTION</div>
+<?php
+	require \view('project_header');
+	// require \view('test2');
+	// require \view('test3');
+?>
+
+<div id="test1">
+	<span @click="test1">{{data}}</span>
+	<span @click="test2">{{data2}}</span>
+
+	<div>
+		
+	</div>
 </div>
 
-<div class="box_row" style="margin-top:10px;height:88%">
-	<div class="item" style="flex-grow:0;">MENU</div>
-	<div class="item" style="flex-grow:1;margin-left:50px">CONTENT</div>
-</div>
+<script type="text/javascript">
+	$$.extend({
+		el:'#test1',
+		event:['event2'],
+		data:function(){
+			return{
+				data:'test1',
+				data2:'test2',
+			}
+		},
 
+		start:function(){
+			
+		},
 
+		chenge:function(){
+			
+		},
 
+		methods:{
+			hd_event2:function(){
+				alert('succsess')
+			},
 
+			test1:function(){
+				$$.event.send('event2')
+			},
 
+			test2:function(){
+				$$.event.delCurrObj(this)
+			}
 
-<style type="text/css">
-	.box_row{
-		display: -webkit-flex;
-		display: flex;
-		flex-wrap:wrap;
-		flex-direction:row;
-		justify-content:flex-start;
-		border: 1px solid red;
-		align-items: stretch;
-	}
-
-	.box_column{
-		display: -webkit-flex;
-		display: flex;
-		flex-wrap:wrap;
-		flex-direction:column;
-		justify-content:flex-start;
-		border: 1px solid red;
-		align-items: stretch;
-	}
-
-	.item{
-		border: 1px solid #000000;
-	}
-</style>
+		},
+	})
+</script>
