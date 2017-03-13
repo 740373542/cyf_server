@@ -13,6 +13,12 @@ function view($filename){
 	return VIEW_PATH . $filename .'.php';
 }
 
+//去除字符串中空格和反斜线
+function filter_str($str){
+    $str = stripslashes( trim($str) );
+    return $str;
+}
+
 function vd($v, $str = '', $printobject = false)
 {
     global $_idx;

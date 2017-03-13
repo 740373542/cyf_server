@@ -16,7 +16,7 @@ $$.stringToJSON = function (str) {
 };
 
 
-$$.js2str = $$.jsonToString
+$$.js2str = $$.jsonToStringa
 $$.str2js = $$.stringToJSON
 
 

@@ -123,6 +123,10 @@ class controller
 
 	 public function __construct(){
 			$this->di = di::load();
+
+			// if(empty($_SESSION)){
+			// 	header("Location:login.html");
+			// }
 	 }
 
 	 public function echoJson(){

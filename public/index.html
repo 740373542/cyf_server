@@ -1,38 +1,44 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <script src="/JsLib/react_build/react.js"></script>
-    <script src="/JsLib/react_build/react-dom.js"></script>
-    <script src="/JsLib/react_build/browser.min.js"></script>
-  </head>
-  <body>
-    <div id="example">123456</div>
-    <script type="text/babel">
+<?php
+	require \view('project_header');
+?>
 
-   
+<body id="body_content">
+	<div class="header_button">
+		<div style="width:35%;height:100%;border:2px solid #FFF;border-radius:10px;display:inline-block"></div>
 
-    var Test = React.createClass({
-      render:function(){
-        return <b>hello,word</b>
-      }
-    })
+		<div style="width:35%;height:100%;border:2px solid #FFF;border-radius:10px;display:inline-block;margin-left:20px"></div>
+	</div>	
+</body>
 
-    var fontColor = 'red'
-
-     var htmls = [
-        <h1>course manage</h1>,
-        <Test></Test>,
-        <p style={{color:fontColor}}>end</p>,
-      ];
+<style type="text/css">
+	.header_button{
+		position: absolute;
+		width:30%;
+		height:7%;
+		right:0;
+	}
 
 
+	#body_content{
+		flex-direction: column;
+		animation-name: TransitionBackground;
+		animation-duration:1s;
+		animation-delay: 0.8s;
+		animation-fill-mode: forwards;
+		background: #000000;
+	}
 
-    ReactDOM.render(
-      <div>{htmls}</div>,
-      document.getElementById('example')
-    )
-
-    </script> 
-
-  </body>
-</html>
+	@keyframes TransitionBackground{
+		from{
+			background: #000000;
+		}
+		to{
+			background:url('/images/background2.jpg');
+			overflow: auto; 
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-attachment: fixed;
+		}
+	}
+</style>
